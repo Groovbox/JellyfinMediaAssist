@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JellyfinMediaAssist</title>
+</head>
+<body>
+    <a href="new">Add Item to queue</a>
+    <div>
+        <h1>Queue</h1>
+        <hr>
+        <ul>
+        {% for item in tracks %}
+            <li>
+                {{ item.artists }} - {{ item.title }}<br>{{ item.import_status}}
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>

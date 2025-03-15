@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item | JellyfinMediaAssist</title>
+</head>
+<body>
+    <h1>Add Item</h1>
+    <form action="/queue/addsong" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend><h3>External Sources</h3></legend>
+            <label for="track_ext_ytm">Youtube Music URL</label>
+            <input name="track_ext_ytm" id="input_track_ext_ytm">
+            <button>Get metadata from YtM</button>
+            <p>Is of the format <i>https://music.youtube.com/watch?v=...</i></p>
+            <label for="track_ext_spt">Spotify URL</label>
+            <input name="track_ext_spt" id="input_track_ext_spt">
+        </fieldset>
+        <fieldset>
+            <legend><h3>Track Metadata</h3></legend>
+            
+            <label for="track_title">Track Title</label>
+            <input type="text" name="track_title" id="input_track_title">
+            <p>Enter the official title of the track. If the official name is in a non-english language then write that here. Do not force translate</p>
+            <label for="track_alias">Track Title Alias</label>
+            <input type="text" name="track_alias" id="input_track_alias">
+            <p>Enter the official track alias. It is generally in English. For youtube music specifically, it is the text that comes after the hyphen for non-english songs. If there is no official alias for the track then use either romaji or direct translation (whichever is more popular)</p>
+            <label for="track_artists">Track Artists</label>
+            <input type="text" name="track_artists" id="input_track_artists">
+            <p>Separate multiple artists with a semicolon (;). Only use English here. The main artist goes first</p>
+            <label for="track_album">Track Album </label>
+            <input type="text" name="track_album" id="input_track_album">
+            <p>Leave blank if the song is a single.</p>
+            <label for="track_date">Track Release Date</label>
+            <input type="text" name="track_date" id="input_track_date">
+            <p>Format: YYYY-MM-DD</p>
+            <label for="track_genres">Track Genres</label>
+            <input type="text" name="track_genres" id="input_track_genres">
+            <p>Separate multiple with semicolon</p>
+        </fieldset>
+        <input type="submit" value="Add to queue">
+    </form>
+</body>
+</html>
